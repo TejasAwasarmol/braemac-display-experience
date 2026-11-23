@@ -25,3 +25,8 @@ html{scrollbar-gutter:stable;overflow-y:scroll}.view.active{animation:fadeOnly .
 #attractMode img{filter:none}
 @media(max-width:760px){.brand-logo{width:122px;height:40px}.hero-showcase{height:360px}.showcase-size{font-size:27px}.showcase-info strong{font-size:17px}}
 @media(min-width:900px){.detail-layout{grid-template-columns:1fr 1fr}.detail-photo{min-height:560px}}
+
+/* Preserve complete product photography and apply the official mark as a crisp overlay. */
+html,body{overflow-x:clip}.hero-copy,.hero-showcase{min-width:0}.hero-showcase{height:auto;grid-template-rows:48px auto auto auto}.showcase-stage{aspect-ratio:16/9;background:#090b0f}.showcase-stage>img{object-fit:contain}.product-image{background:#11141a}.product-image>img{object-fit:contain}.detail-photo{position:relative;background:#0b0d11}.detail-photo>img{object-fit:contain}
+.photo-brand{position:absolute;right:12px;bottom:12px;z-index:4;display:grid;place-items:center;width:112px;height:34px;padding:6px 9px;border-radius:8px;background:rgba(255,255,255,.94);box-shadow:0 5px 18px #0004;backdrop-filter:blur(6px);pointer-events:none}.photo-brand img{position:static!important;width:100%!important;height:100%!important;object-fit:contain!important;object-position:center!important;transform:none!important;filter:none!important}.photo-brand.large{width:150px;height:43px;right:18px;bottom:18px}.showcase-stage .photo-brand{right:14px;bottom:14px}.experience-card.photo .photo-brand{inset:auto 16px 16px auto;width:105px;height:32px}
+@media(max-width:760px){.photo-brand{width:94px;height:30px}.photo-brand.large{width:120px;height:36px}}
