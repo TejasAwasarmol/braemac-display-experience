@@ -13,7 +13,7 @@
   <div class="app-shell">
     <header class="topbar">
       <button class="brand" data-route="home" aria-label="Go to home">
-        <img src="assets/braemac-logo.png" alt="Braemac">
+        <span class="brand-logo"><img class="logo-light" src="assets/braemac-logo-transparent.png" alt="Braemac"><img class="logo-dark" src="assets/braemac-logo-dark.png" alt=""></span>
         <span class="brand-rule" aria-hidden="true"></span>
         <span>Braemac Display Offering</span>
       </button>
@@ -41,19 +41,12 @@
               <button class="button ghost" data-route="displays">Browse the range</button>
             </div>
           </div>
-          <button class="hero-visual" data-route="displays" aria-label="Explore the 55 inch outdoor display">
-            <div class="screen-glow"></div>
-            <div class="display-frame">
-              <div class="display-content">
-                <span>55” OUTDOOR DISPLAY</span>
-                <strong>4K clarity.<br>Built for daylight.</strong>
-                <small>2,000 nits · IP65 · BDM550UNM-35S</small>
-              </div>
-            </div>
-            <span class="floating-chip chip-one">4K UHD</span>
-            <span class="floating-chip chip-two">IP65</span>
-            <span class="floating-chip chip-three">2,000 nits</span>
-          </button>
+          <div class="hero-showcase" aria-label="Braemac display range showcase" aria-live="polite">
+            <div class="showcase-top"><span>DISPLAY FAMILY</span><span id="heroCounter">01 / 08</span></div>
+            <div class="showcase-stage"><img id="heroProductImage" src="assets/product-neutral/21-5-indoor-counter.jpg" alt="21.5 inch indoor counter promotional display"></div>
+            <div class="showcase-info"><div><span id="heroEnvironment">INDOOR · 500 NITS</span><strong id="heroProductName">21.5” Counter Display</strong><small id="heroProductSpec">FHD · BDM215FTM-05S</small></div><div class="showcase-size" id="heroSize">21.5”</div></div>
+            <div class="showcase-controls"><button id="heroPrevious" aria-label="Previous display">‹</button><div id="heroDots" aria-hidden="true"></div><button id="heroNext" aria-label="Next display">›</button></div>
+          </div>
         </div>
 
         <div class="experience-grid">
@@ -62,7 +55,7 @@
             <div><h2>Touch Lab</h2><p>Draw, tap and put multi-touch to the test.</p></div><span class="round-arrow">↗</span>
           </button>
           <button class="experience-card photo" data-route="displays">
-            <img src="assets/product-previews/49-outdoor-menu-board.jpg" alt="Outdoor menu board display">
+            <img src="assets/product-neutral/49-outdoor.jpg" alt="Unbranded outdoor menu board display">
             <span class="shade"></span><span class="card-number">02</span>
             <div><h2>Display Range</h2><p>Find the right size, brightness and format.</p></div><span class="round-arrow">↗</span>
           </button>
@@ -209,7 +202,7 @@
 
   <dialog id="productDialog"><button class="dialog-close" data-close-dialog aria-label="Close">×</button><div id="productDetail"></div></dialog>
   <dialog id="compareDialog"><button class="dialog-close" data-close-dialog aria-label="Close">×</button><div id="compareDetail"></div></dialog>
-  <div id="attractMode" aria-hidden="true"><div class="attract-bg"></div><img src="assets/braemac-logo-white.png" alt="Braemac"><span>DISPLAY · TOUCH · COMPUTE</span><h2>Designed to be touched.</h2><p>Tap anywhere to explore the Braemac display offering</p><i></i></div>
+  <div id="attractMode" aria-hidden="true"><div class="attract-bg"></div><img src="assets/braemac-logo-dark.png" alt="Braemac"><span>DISPLAY · TOUCH · COMPUTE</span><h2>Designed to be touched.</h2><p>Tap anywhere to explore the Braemac display offering</p><i></i></div>
 
   <script src="app.js"></script>
 </body>
