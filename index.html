@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#d71920">
+  <title>Braemac Display Offering</title>
+  <meta name="description" content="Explore Braemac display, touch and media-player solutions.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <button class="brand" data-route="home" aria-label="Go to home">
+        <img src="assets/braemac-logo.png" alt="Braemac">
+        <span class="brand-rule" aria-hidden="true"></span>
+        <span>Braemac Display Offering</span>
+      </button>
+      <nav class="primary-nav" aria-label="Main navigation">
+        <button data-route="touch"><span class="nav-icon">✦</span> Touch Lab</button>
+        <button data-route="displays"><span class="nav-icon">▣</span> Displays</button>
+        <button data-route="players"><span class="nav-icon">⌁</span> Media Players</button>
+        <button data-route="technology"><span class="nav-icon">◉</span> Technology</button>
+      </nav>
+      <div class="header-actions">
+        <button id="themeToggle" class="icon-button" aria-label="Switch colour theme" title="Switch colour theme">◐</button>
+        <button id="fullScreen" class="icon-button" aria-label="Enter full screen" title="Enter full screen">⛶</button>
+      </div>
+    </header>
+
+    <main id="app" tabindex="-1">
+      <section class="view active" data-view="home">
+        <div class="hero">
+          <div class="hero-copy">
+            <span class="eyebrow">DISPLAY · TOUCH · COMPUTE</span>
+            <h1>One screen.<br><em>Every possibility.</em></h1>
+            <p>Touch, compare and discover a display platform designed around your application.</p>
+            <div class="hero-actions">
+              <button class="button primary" data-route="touch">Start with touch <span>→</span></button>
+              <button class="button ghost" data-route="displays">Browse the range</button>
+            </div>
+          </div>
+          <button class="hero-visual" data-route="technology" aria-label="Explore display technology">
+            <div class="screen-glow"></div>
+            <div class="display-frame">
+              <div class="display-content">
+                <span>43”</span>
+                <strong>Engineered<br>to be seen.</strong>
+                <small>High brightness · Commercial grade</small>
+              </div>
+            </div>
+            <span class="floating-chip chip-one">4K UHD</span>
+            <span class="floating-chip chip-two">IP65</span>
+            <span class="floating-chip chip-three">Touch ready</span>
+          </button>
+        </div>
+
+        <div class="experience-grid">
+          <button class="experience-card red" data-route="touch">
+            <span class="card-number">01</span><span class="large-icon">✦</span>
+            <div><h2>Touch Lab</h2><p>Draw, tap and put multi-touch to the test.</p></div><span class="round-arrow">↗</span>
+          </button>
+          <button class="experience-card photo" data-route="displays">
+            <img src="assets/product-previews/49-outdoor-menu-board.jpg" alt="Outdoor menu board display">
+            <span class="shade"></span><span class="card-number">02</span>
+            <div><h2>Display Range</h2><p>Find the right size, brightness and format.</p></div><span class="round-arrow">↗</span>
+          </button>
+          <button class="experience-card dark" data-route="players">
+            <span class="card-number">03</span><span class="processor-graphic" aria-hidden="true"><i></i></span>
+            <div><h2>Media Players</h2><p>ARM or x86? Build the right compute platform.</p></div><span class="round-arrow">↗</span>
+          </button>
+          <button class="experience-card spectrum" data-route="technology">
+            <span class="card-number">04</span><span class="orb" aria-hidden="true"></span>
+            <div><h2>Display Technology</h2><p>See how better light makes a better image.</p></div><span class="round-arrow">↗</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="view" data-view="touch">
+        <div class="section-heading">
+          <div><span class="eyebrow">INTERACTIVE DEMOS</span><h1>Touch Lab</h1><p>Try it yourself. Every demo is built for fingers, not a mouse.</p></div>
+          <button class="back-button" data-route="home">← Home</button>
+        </div>
+        <div class="demo-tabs" role="tablist">
+          <button class="active" data-demo="draw">Scribble Studio</button>
+          <button data-demo="multi">Multi-touch Field</button>
+          <button data-demo="reaction">Reaction Test</button>
+        </div>
+        <div class="demo-panel active" data-demo-panel="draw">
+          <div class="canvas-toolbar">
+            <div><strong>Scribble Studio</strong><span id="drawStats">0 strokes · ready</span></div>
+            <div class="colour-picks" aria-label="Brush colour">
+              <button class="active" data-colour="#d71920" style="--swatch:#d71920" aria-label="Red"></button>
+              <button data-colour="#05a5df" style="--swatch:#05a5df" aria-label="Blue"></button>
+              <button data-colour="#ffb500" style="--swatch:#ffb500" aria-label="Yellow"></button>
+              <button data-colour="#ffffff" style="--swatch:#ffffff" aria-label="White"></button>
+            </div>
+            <label class="brush-size">Brush <input id="brushSize" type="range" min="3" max="34" value="9"></label>
+            <button class="button small ghost" id="clearDraw">Clear</button>
+          </div>
+          <div class="canvas-wrap"><canvas id="drawCanvas"></canvas><span class="canvas-hint">Draw with one or more fingers</span></div>
+        </div>
+        <div class="demo-panel" data-demo-panel="multi">
+          <div class="canvas-toolbar"><div><strong>Multi-touch Field</strong><span>Touch with several fingers at once</span></div><div class="touch-count"><b id="touchCount">0</b> live touches <small>Peak <b id="peakCount">0</b></small></div><button class="button small ghost" id="clearMulti">Reset</button></div>
+          <div class="canvas-wrap multi-wrap"><canvas id="multiCanvas"></canvas><span class="canvas-hint">Press, move and add more fingers</span></div>
+        </div>
+        <div class="demo-panel" data-demo-panel="reaction">
+          <div class="reaction-stage" id="reactionStage">
+            <div class="reaction-intro" id="reactionIntro"><span class="large-icon">◎</span><h2>How fast are your fingers?</h2><p>Hit 12 targets. We’ll measure your average reaction time and accuracy.</p><button class="button primary" id="startReaction">Start challenge</button></div>
+            <button id="reactionTarget" aria-label="Tap target"></button>
+            <div class="reaction-score"><span>HITS <b id="reactionHits">0 / 12</b></span><span>AVERAGE <b id="reactionAverage">—</b></span><span>BEST <b id="reactionBest">—</b></span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="view" data-view="displays">
+        <div class="section-heading">
+          <div><span class="eyebrow">COMMERCIAL DISPLAY RANGE</span><h1>Find your display</h1><p>Filter by environment, compare key specifications and open the complete datasheet.</p></div>
+          <button class="back-button" data-route="home">← Home</button>
+        </div>
+        <div class="display-filters">
+          <div class="segmented" id="environmentFilter"><button class="active" data-filter="all">All</button><button data-filter="indoor">Indoor</button><button data-filter="outdoor">Outdoor</button></div>
+          <label>Use case <select id="useFilter"><option value="all">All applications</option><option value="menu">Menu boards</option><option value="kiosk">Kiosk & payment</option><option value="promotion">Promotional</option><option value="led">LED display</option></select></label>
+          <label>Minimum brightness <select id="brightnessFilter"><option value="0">Any brightness</option><option value="500">500+ nits</option><option value="1000">1,000+ nits</option><option value="2000">2,000+ nits</option><option value="5000">5,000+ nits</option></select></label>
+          <span id="resultCount" class="result-count"></span>
+        </div>
+        <div class="product-grid" id="productGrid"></div>
+        <div class="compare-dock" id="compareDock"><span><b id="compareCount">0</b> selected</span><div id="compareNames"></div><button class="button primary small" id="openCompare" disabled>Compare</button><button class="link-button" id="clearCompare">Clear</button></div>
+      </section>
+
+      <section class="view" data-view="players">
+        <div class="section-heading">
+          <div><span class="eyebrow">BRAEMAC MEDIA PLAYERS</span><h1>Choose your compute path</h1><p>Start with the application—not the processor—and configure the platform around it.</p></div>
+          <button class="back-button" data-route="home">← Home</button>
+        </div>
+        <div class="player-layout">
+          <div class="player-path arm">
+            <div class="architecture-mark">ARM</div><span class="status-pill">LOW POWER · FANLESS</span>
+            <h2>MediaTek Genio 700</h2><p>Compact Android signage and smart kiosk endpoints with edge-AI capability.</p>
+            <div class="metric-row"><div><strong>4 TOPS</strong><span>AI inference</span></div><div><strong>Dual HDMI</strong><span>4K output</span></div><div><strong>Android 14</strong><span>ready</span></div></div>
+            <ul class="feature-list"><li>GbE, USB 3.1 and RS-232</li><li>Optional Wi‑Fi / Bluetooth</li><li>Board-level or enclosed player</li></ul>
+          </div>
+          <div class="versus">OR</div>
+          <div class="player-path x86">
+            <div class="architecture-mark">x86</div><span class="status-pill">RICH I/O · MULTI-DISPLAY</span>
+            <h2>ASRock SBC-266J</h2><p>Industrial Windows or Linux compute with expansion, serial I/O and triple-display support.</p>
+            <div class="metric-row"><div><strong>Intel N150</strong><span>Twin Lake</span></div><div><strong>3 displays</strong><span>HDMI · DP · LVDS/eDP</span></div><div><strong>9–36 V</strong><span>wide input</span></div></div>
+            <ul class="feature-list"><li>Dual LAN, 6× COM and GPIO</li><li>M.2 storage, wireless and cellular expansion</li><li>OOB / watchdog / recovery options defined per program</li></ul>
+          </div>
+        </div>
+        <div class="platform-builder">
+          <div class="builder-copy"><span class="eyebrow">QUICK SELECTOR</span><h2>What does your application need?</h2><p>Tap every requirement that matters. The recommendation updates live.</p><div class="requirement-grid" id="requirementGrid">
+            <button data-score="arm">Android application</button><button data-score="x86">Windows software</button><button data-score="arm">Lowest power</button><button data-score="x86">Triple display</button><button data-score="x86">Serial & GPIO</button><button data-score="both">Linux</button><button data-score="arm">Edge AI</button><button data-score="x86">Remote recovery / OOB</button>
+          </div></div>
+          <div class="recommendation" id="recommendation"><span>RECOMMENDED STARTING POINT</span><strong>Tell us what matters</strong><p>Select requirements to compare the two architecture paths.</p><div class="os-row"><i>Android</i><i>Linux</i><i>Windows</i></div></div>
+        </div>
+        <div class="oob-note"><span class="oob-icon">↻</span><div><h3>What does out-of-band management mean?</h3><p>On a suitably configured x86 platform, a specialist can monitor, restart or recover a deployed player even when its main operating system is unavailable. The exact OOB, security and recovery stack is selected and validated for each customer program.</p></div></div>
+      </section>
+
+      <section class="view" data-view="technology">
+        <div class="section-heading">
+          <div><span class="eyebrow">INSIDE THE IMAGE</span><h1>Display technology, made visible</h1><p>Move the controls to see what each technology contributes to the viewing experience.</p></div>
+          <button class="back-button" data-route="home">← Home</button>
+        </div>
+        <div class="tech-tabs" role="tablist"><button class="active" data-tech="dimming">Local dimming</button><button data-tech="dot">Quantum dot</button><button data-tech="rod">Quantum rod</button></div>
+        <div class="tech-panel active" data-tech-panel="dimming">
+          <div class="tech-demo dimming-demo"><div class="night-scene"><span class="moon"></span><span class="city"></span><div class="zone-grid" id="zoneGrid"></div></div><div class="demo-control"><span>Standard backlight</span><input id="dimmingControl" type="range" min="0" max="100" value="80"><span>Local dimming</span></div></div>
+          <div class="tech-copy"><span class="tech-index">01</span><h2>Light only where it’s needed.</h2><p>Local dimming divides the backlight into independently controlled zones. Dark areas can stay dark while highlights remain bright.</p><div class="advantage-list"><span><b>Deeper blacks</b>Improved perceived contrast</span><span><b>Better highlights</b>Bright detail without washing out shadows</span><span><b>Premium impact</b>More dimensional, lifelike images</span></div></div>
+        </div>
+        <div class="tech-panel" data-tech-panel="dot">
+          <div class="tech-demo colour-demo"><div class="colour-scene"><div class="colour-before"></div><div class="colour-after" id="colourAfter"></div><span class="compare-label left">STANDARD</span><span class="compare-label right">QUANTUM DOT</span><i id="colourDivider"></i></div><input id="colourControl" type="range" min="5" max="95" value="50"></div>
+          <div class="tech-copy"><span class="tech-index">02</span><h2>Purity creates colour.</h2><p>Quantum dots convert blue backlight energy into precise red and green wavelengths, producing a wider and more accurate colour range.</p><div class="advantage-list"><span><b>Wider gamut</b>Richer reds and greens</span><span><b>High brightness</b>Strong colour at demanding luminance</span><span><b>Colour accuracy</b>More controlled spectral output</span></div></div>
+        </div>
+        <div class="tech-panel" data-tech-panel="rod">
+          <div class="tech-demo rod-demo"><canvas id="rodCanvas"></canvas><div class="rod-toggle"><button class="active" data-align="random">Random</button><button data-align="aligned">Aligned</button></div></div>
+          <div class="tech-copy"><span class="tech-index">03</span><h2>Colour—with direction.</h2><p>Quantum rods are elongated nanocrystals. When aligned, they can emit directionally polarised light—opening paths to more efficient display architectures.</p><div class="advantage-list"><span><b>Polarised output</b>Potentially less light lost through polarisation</span><span><b>High colour purity</b>Narrow spectral emission</span><span><b>Design potential</b>Efficiency and optical-stack opportunities</span></div><small class="qualification">Quantum-rod availability and performance are application- and supply-chain dependent; final integration requires engineering confirmation.</small></div>
+        </div>
+      </section>
+    </main>
+
+    <footer><span>Engineered display solutions by <b>Braemac</b></span><span>Tap anywhere to explore · Specifications subject to final configuration</span></footer>
+  </div>
+
+  <dialog id="productDialog"><button class="dialog-close" data-close-dialog aria-label="Close">×</button><div id="productDetail"></div></dialog>
+  <dialog id="compareDialog"><button class="dialog-close" data-close-dialog aria-label="Close">×</button><div id="compareDetail"></div></dialog>
+  <div id="attractMode" aria-hidden="true"><div class="attract-bg"></div><img src="assets/braemac-logo-white.png" alt="Braemac"><span>DISPLAY · TOUCH · COMPUTE</span><h2>Designed to be touched.</h2><p>Tap anywhere to explore the Braemac display offering</p><i></i></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
