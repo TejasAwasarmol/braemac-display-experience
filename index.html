@@ -41,18 +41,18 @@
               <button class="button ghost" data-route="displays">Browse the range</button>
             </div>
           </div>
-          <button class="hero-visual" data-route="technology" aria-label="Explore display technology">
+          <button class="hero-visual" data-route="displays" aria-label="Explore the 55 inch outdoor display">
             <div class="screen-glow"></div>
             <div class="display-frame">
               <div class="display-content">
-                <span>43”</span>
-                <strong>Engineered<br>to be seen.</strong>
-                <small>High brightness · Commercial grade</small>
+                <span>55” OUTDOOR DISPLAY</span>
+                <strong>4K clarity.<br>Built for daylight.</strong>
+                <small>2,000 nits · IP65 · BDM550UNM-35S</small>
               </div>
             </div>
             <span class="floating-chip chip-one">4K UHD</span>
             <span class="floating-chip chip-two">IP65</span>
-            <span class="floating-chip chip-three">Touch ready</span>
+            <span class="floating-chip chip-three">2,000 nits</span>
           </button>
         </div>
 
@@ -165,16 +165,41 @@
         </div>
         <div class="tech-tabs" role="tablist"><button class="active" data-tech="dimming">Local dimming</button><button data-tech="dot">Quantum dot</button><button data-tech="rod">Quantum rod</button></div>
         <div class="tech-panel active" data-tech-panel="dimming">
-          <div class="tech-demo dimming-demo"><div class="night-scene"><span class="moon"></span><span class="city"></span><div class="zone-grid" id="zoneGrid"></div></div><div class="demo-control"><span>Standard backlight</span><input id="dimmingControl" type="range" min="0" max="100" value="80"><span>Local dimming</span></div></div>
-          <div class="tech-copy"><span class="tech-index">01</span><h2>Light only where it’s needed.</h2><p>Local dimming divides the backlight into independently controlled zones. Dark areas can stay dark while highlights remain bright.</p><div class="advantage-list"><span><b>Deeper blacks</b>Improved perceived contrast</span><span><b>Better highlights</b>Bright detail without washing out shadows</span><span><b>Premium impact</b>More dimensional, lifelike images</span></div></div>
+          <div class="tech-demo dimming-demo">
+            <div class="demo-title"><span>LIVE EXAMPLE</span><strong>White timetable on a dark screen</strong></div>
+            <div class="night-scene"><span class="moon"></span><span class="city"></span><div class="station-sign"><b>NEXT TRAIN</b><strong>06:42</strong><small>Platform 3 · On time</small></div><div class="zone-grid" id="zoneGrid"></div></div>
+            <div class="demo-readout"><span><small>Backlight behaviour</small><b id="dimmingMode">Zones follow the image</b></span><span><small>Dark-area halo</small><b id="haloReadout">Low</b></span></div>
+            <div class="demo-control"><span>One full backlight</span><input id="dimmingControl" type="range" min="0" max="100" value="80"><span>Independent zones</span></div>
+          </div>
+          <div class="tech-copy"><span class="concept-label">THE SIMPLE VERSION</span><h2>The backlight turns down behind dark content.</h2><p>An LCD panel does not make its own light—it controls light from behind. A standard backlight stays broadly illuminated. Local dimming splits that light into zones, then dims each zone to match the picture.</p>
+            <div class="how-chain"><span><i>1</i><b>Image analysed</b>Bright and dark areas are located.</span><span><i>2</i><b>Zones adjusted</b>Each backlight zone changes output.</span><span><i>3</i><b>Contrast improves</b>Black areas look darker beside bright text.</span></div>
+            <div class="example-callout"><b>Why it matters in practice</b>A station timetable, movie subtitle or night-time dashboard can keep bright white detail without turning the whole black background grey. More and smaller zones generally give finer control; exact performance depends on the panel and algorithm.</div>
+          </div>
         </div>
         <div class="tech-panel" data-tech-panel="dot">
-          <div class="tech-demo colour-demo"><div class="colour-scene"><div class="colour-before"></div><div class="colour-after" id="colourAfter"></div><span class="compare-label left">STANDARD</span><span class="compare-label right">QUANTUM DOT</span><i id="colourDivider"></i></div><input id="colourControl" type="range" min="5" max="95" value="50"></div>
-          <div class="tech-copy"><span class="tech-index">02</span><h2>Purity creates colour.</h2><p>Quantum dots convert blue backlight energy into precise red and green wavelengths, producing a wider and more accurate colour range.</p><div class="advantage-list"><span><b>Wider gamut</b>Richer reds and greens</span><span><b>High brightness</b>Strong colour at demanding luminance</span><span><b>Colour accuracy</b>More controlled spectral output</span></div></div>
+          <div class="tech-demo colour-demo">
+            <div class="demo-title"><span>DRAG TO COMPARE</span><strong>Colour under a high-brightness backlight</strong></div>
+            <div class="colour-scene"><div class="colour-before"><span>Brand red</span><span>Safety green</span><span>Deep blue</span></div><div class="colour-after" id="colourAfter"><span>Brand red</span><span>Safety green</span><span>Deep blue</span></div><span class="compare-label left">CONVENTIONAL</span><span class="compare-label right">QUANTUM DOT</span><i id="colourDivider"></i></div>
+            <input id="colourControl" type="range" min="5" max="95" value="50" aria-label="Compare conventional and quantum dot colour">
+            <div class="light-conversion"><span class="blue-source">BLUE LED</span><b>→</b><span class="qd-layer">QUANTUM-DOT LAYER</span><b>→</b><span class="rgb-output"><i>R</i><i>G</i><i>B</i> PURE COLOUR</span></div>
+          </div>
+          <div class="tech-copy"><span class="concept-label">THE SIMPLE VERSION</span><h2>Tiny particles make purer red and green light.</h2><p>Quantum dots are nanometre-scale semiconductor particles. Blue LED light excites them; different particle sizes emit precise red or green light. The display then has cleaner red, green and blue building blocks to mix into colours.</p>
+            <div class="how-chain"><span><i>1</i><b>Blue light enters</b>A blue LED provides the energy.</span><span><i>2</i><b>Dots convert it</b>Selected dots emit narrow red and green wavelengths.</span><span><i>3</i><b>Pixels mix colour</b>Purer primaries create a wider colour gamut.</span></div>
+            <div class="example-callout"><b>Why it matters in practice</b>A red Braemac logo, green rail status indicator or product photograph can remain more saturated and distinguishable at high brightness. Quantum dot improves colour capability; calibration still determines accuracy.</div>
+          </div>
         </div>
         <div class="tech-panel" data-tech-panel="rod">
-          <div class="tech-demo rod-demo"><canvas id="rodCanvas"></canvas><div class="rod-toggle"><button class="active" data-align="random">Random</button><button data-align="aligned">Aligned</button></div></div>
-          <div class="tech-copy"><span class="tech-index">03</span><h2>Colour—with direction.</h2><p>Quantum rods are elongated nanocrystals. When aligned, they can emit directionally polarised light—opening paths to more efficient display architectures.</p><div class="advantage-list"><span><b>Polarised output</b>Potentially less light lost through polarisation</span><span><b>High colour purity</b>Narrow spectral emission</span><span><b>Design potential</b>Efficiency and optical-stack opportunities</span></div><small class="qualification">Quantum-rod availability and performance are application- and supply-chain dependent; final integration requires engineering confirmation.</small></div>
+          <div class="tech-demo rod-demo">
+            <div class="demo-title"><span>TAP TO ALIGN</span><strong>Round dots emit broadly; rods can be directional</strong></div>
+            <canvas id="rodCanvas"></canvas>
+            <div class="rod-result"><span><small>Rod orientation</small><b id="rodOrientation">Random</b></span><span><small>Useful polarised light</small><b id="rodEfficiency">Lower potential</b></span></div>
+            <div class="rod-toggle"><button class="active" data-align="random">Random rods</button><button data-align="aligned">Align rods</button></div>
+          </div>
+          <div class="tech-copy"><span class="concept-label">THE SIMPLE VERSION</span><h2>A stretched quantum dot can control light direction.</h2><p>A quantum rod uses similar semiconductor physics to a quantum dot, but its elongated shape gives the emitted light a preferred direction. If the rods are aligned, their light can also share a polarisation direction.</p>
+            <div class="dot-vs-rod"><div><i class="dot-shape"></i><span><b>Quantum dot</b>Roughly spherical<br>Colour conversion</span></div><div><i class="rod-shape"></i><span><b>Quantum rod</b>Elongated and aligned<br>Colour + direction potential</span></div></div>
+            <div class="example-callout"><b>Why engineers are interested</b>LCDs normally discard some light in the polariser. Aligned rods may deliver more light in the useful direction, creating efficiency or brightness opportunities. This is an emerging integration option—not a drop-in promise.</div>
+            <small class="qualification">Quantum-rod availability, alignment method, lifetime and optical performance must be validated for the selected display program.</small>
+          </div>
         </div>
       </section>
     </main>
